@@ -20,6 +20,22 @@ class PurchaseRequest extends AbstractRequest {
 	 *
 	 * @return PurchaseRequest
 	 */
+	public function setApiKey($value) {
+		return $this->setParameter('apiKey', $value);
+	}
+
+	/**
+	 * @return mixed
+	 */
+	public function getApiKey() {
+		return $this->getParameter('apiKey');
+	}
+
+	/**
+	 * @param $value
+	 *
+	 * @return PurchaseRequest
+	 */
 	public function setEmail($value) {
 		return $this->setParameter('email', $value);
 	}
@@ -105,7 +121,7 @@ class PurchaseRequest extends AbstractRequest {
 	public function getData() {
 		$this->validate('email', 'amount', 'webhookURL', 'returnURL');
 		return [
-			'apiKey'     => $this->getParameter('apiKey'),
+			'apiKey'     => $this->getApiKey(),
 			'email'      => $this->getEmail(),
 			'amount'     => $this->getAmount(),
 			'webhookURL' => $this->getWebhookUrl(),
