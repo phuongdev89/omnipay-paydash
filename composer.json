@@ -1,0 +1,27 @@
+{
+	"name" : "phuong17889/omnipay-paydash",
+	"description" : "Omnipay for paydash",
+	"type" : "library",
+	"keywords" : [
+		"omnipay",
+		"paydash"
+	],
+	"license" : "MIT",
+	"authors" : [
+		{
+			"name" : "Le Phuong",
+			"email" : "phuong17889@gmail.com"
+		}
+	],
+	"require" : {
+		"ext-curl" : "*",
+		"ext-json" : "*",
+		"php" : "^7.1",
+		"omnipay/common" : "^3.0"
+	},
+	"autoload" : {
+		"psr-4" : {
+			"Omnipay\\Paydash\\" : "src/"
+		}
+	}
+}
