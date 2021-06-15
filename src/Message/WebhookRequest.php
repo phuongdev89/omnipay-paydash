@@ -12,7 +12,6 @@ namespace Omnipay\Paydash\Message;
 
 use Omnipay\Common\Exception\InvalidRequestException;
 use Omnipay\Common\Message\AbstractRequest;
-use Omnipay\Common\Message\ResponseInterface;
 
 class WebhookRequest extends AbstractRequest {
 
