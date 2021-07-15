@@ -7,6 +7,7 @@ use Omnipay\Common\Message\AbstractRequest;
 use Omnipay\Common\Message\NotificationInterface;
 use Omnipay\Common\Message\RequestInterface;
 use Omnipay\Paydash\Message\PurchaseRequest;
+use Omnipay\Paydash\Message\StatusRequest;
 use Omnipay\Paydash\Message\WebhookRequest;
 
 /**
@@ -76,5 +77,15 @@ class Gateway extends AbstractGateway {
 	public function webhook($parameters = []) {
 		$parameters['apiKey'] = $this->getApiKey();
 		return $this->createRequest(WebhookRequest::class, $parameters);
+	}
+
+	/**
+	 * @param array $parameters
+	 *
+	 * @return AbstractRequest
+	 */
+	public function status($parameters = []) {
+		$parameters['apiKey'] = $this->getApiKey();
+		return $this->createRequest(StatusRequest::class, $parameters);
 	}
 }

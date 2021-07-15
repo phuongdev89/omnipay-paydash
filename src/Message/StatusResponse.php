@@ -46,7 +46,7 @@ class StatusResponse extends AbstractResponse {
 	 * @return bool
 	 */
 	public function isPaid() {
-		return $this->isSuccessful() && $this->getMessage() == 'Paid';
+		return $this->isSuccessful() && $this->getMessage() == 'paid';
 	}
 
 	/**

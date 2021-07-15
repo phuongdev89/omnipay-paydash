@@ -10,10 +10,13 @@
 
 namespace Omnipay\Paydash\Message;
 
+use GuzzleHttp\Exception\BadResponseException;
 use Omnipay\Common\Exception\InvalidRequestException;
 use Omnipay\Common\Message\AbstractRequest;
 
 class StatusRequest extends AbstractRequest {
+
+	protected $liveEndpoint = 'https://paydash.co.uk/api/merchant/status/';
 
 	/**
 	 * @param $value
@@ -46,6 +49,12 @@ class StatusRequest extends AbstractRequest {
 	 * @return StatusResponse
 	 */
 	public function sendData($data) {
-		return new StatusResponse($this, $data);
+		try {
+			$response = $this->httpClient->request('GET', $this->liveEndpoint . $this->getId(), [], json_encode($data));
+		} catch (BadResponseException $e) {
+			$response = $e->getResponse();
+		}
+		$result = json_decode($response->getBody()->getContents(), true);
+		return new StatusResponse($this, $result);
 	}
 }
