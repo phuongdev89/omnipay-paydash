@@ -10,13 +10,13 @@ The preferred way to install this extension is through [composer](http://getcomp
 Either run
 
 ```
-php composer.phar require --prefer-dist phuong17889/omnipay-paydash "*"
+php composer.phar require --prefer-dist phuongdev89/omnipay-paydash "*"
 ```
 
 or add
 
 ```
-"phuong17889/omnipay-paydash": "*"
+"phuongdev89/omnipay-paydash": "*"
 ```
 
 to the require section of your `composer.json` file.
