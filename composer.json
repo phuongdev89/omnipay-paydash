@@ -16,7 +16,6 @@
 	"require" : {
 		"ext-curl" : "*",
 		"ext-json" : "*",
-		"php" : "^7.1",
 		"omnipay/common" : "^3.0"
 	},
 	"autoload" : {
